@@ -33,4 +33,4 @@ def passphrase_gen(textfile, min_char):
     print(len(p_phrase))
 
 
-passphrase_gen('tandh.txt', 22)
+passphrase_gen('Snow White.txt', 22)
