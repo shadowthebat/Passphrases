@@ -12,7 +12,7 @@ def passphrase_gen(textfile, min_char):
 
     story_punctuated = story.split()  # splits story's words into list
     story = list()  # story is now empty so we can store words without punctuation
-    punc = '.!?\"\',;:()'  # punctuation defined in string
+    punc = '.!?\"\',;:()-_[]{}1234567890'  # punctuation and numbers defined in string
 
     for word in story_punctuated:  # removes punctuation from words and appends to story
         newword = ''
@@ -31,6 +31,3 @@ def passphrase_gen(textfile, min_char):
     print(pass_list)  # prints list of words for readability
     print(p_phrase)
     print(len(p_phrase))
-
-
-passphrase_gen('Snow White.txt', 22)

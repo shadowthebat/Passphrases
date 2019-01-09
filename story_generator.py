@@ -26,6 +26,7 @@ def get_story_text(url):  # creates a .txt of the story from target url
     story = ''  # empty string for story
     for i in texthtml:  # adds the text from the paragraphs into story string
         story += i.text
+        story += '\n'
     title = soup.find('h1').text  # defines title of story
     title += '.txt'  # defines textfile name and extention
     with open(title, 'w') as f:  # saves story to text file appropriately titled
@@ -34,3 +35,5 @@ def get_story_text(url):  # creates a .txt of the story from target url
 
 story_links = get_story_links()
 get_story_text(random.choice(story_links))
+
+# running this code will create a text file containing a childrens story
