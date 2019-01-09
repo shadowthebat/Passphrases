@@ -7,10 +7,10 @@ from story_gen import *
 print('')
 print('--Passphrase_Collection_STB--')
 main_menu = Menu()
-menu_items = ['Passphrase Character Counter',
-              'Passphrase Generator', 'New Story Generator']
-functions = [Passphrase_Character_Counter,
-             Passphrase_Generator, New_Story_Generator]
+menu_items = ['Passphrase Accuracy Counter',
+              'Passphrase Generator', 'Story Generator', 'Help']
+functions = [Passphrase_Accuracy_Counter,
+             Passphrase_Generator, Story_Generator, Help]
 main_menu.set_from_scratch(menu_items)
 main_menu.set_functions(functions)
 main_menu.display()

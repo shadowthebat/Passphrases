@@ -41,7 +41,7 @@ def get_story_text(url):  # creates a .txt of the story from target url
     x = input('$: ')
 
 
-def New_Story_Generator():  # this code will create a text file containing a childrens story
+def Story_Generator():  # this code will create a text file containing a childrens story
     text_files = Menu()
     text_files.set_text_files()
     text_files.display()

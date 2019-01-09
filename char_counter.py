@@ -4,7 +4,7 @@ def get_started():  # Function that prompts user for input
     print("   --- \"0\" to return to previous menu ---")  # User Manual
 
 
-def Passphrase_Character_Counter():
+def Passphrase_Accuracy_Counter():
     get_started()
     pwd = input(" Enter Passphrase $: ")  # Prompt for passphrase
     x = ''
