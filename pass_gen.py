@@ -1,4 +1,7 @@
 import random
+from menu import *
+from time import sleep
+from typing import *
 
 # passphrase generator randomly generates passphrase
 # from words found in textfile paramater
@@ -6,8 +9,14 @@ import random
 # returns passphrase and wordcount of passphrase
 
 
-def passphrase_gen(textfile, min_char):
-    with open(textfile, 'r') as f:  # imports story string from textfile as story
+def Passphrase_Generator():
+    text_files = Menu()
+    text_files.set_text_files()
+    text_files.set_title('choose story from which a passphrase will be generated')
+    text_files.display()
+    index = int(input('$: '))
+    min_char = int(input('Enter minimum character length for passphrase $: '))
+    with open(text_files.selection[index], 'r') as f:  # imports story string from textfile as story
         story = f.read()
 
     story_punctuated = story.split()  # splits story's words into list
@@ -28,6 +37,15 @@ def passphrase_gen(textfile, min_char):
         p_phrase += choice
         pass_list.append(choice)
 
-    print(pass_list)  # prints list of words for readability
+    print('')
+    print('Passphrase generated:')
     print(p_phrase)
-    print(len(p_phrase))
+    print('')
+    print(f'from the words:')
+    print(pass_list)
+    print('')
+    print(f'Length: {len(p_phrase)}')
+    print('')
+    typing('Continue to main menu')
+    print('')
+    x = input('$: ')

@@ -1,6 +1,8 @@
 from bs4 import BeautifulSoup
 import requests
 import random
+from menu import *
+import os
 
 
 def get_story_links():  # returns links to story pages
@@ -31,9 +33,32 @@ def get_story_text(url):  # creates a .txt of the story from target url
     title += '.txt'  # defines textfile name and extention
     with open(title, 'w') as f:  # saves story to text file appropriately titled
         f.write(story)
+    print('')
+    print(f'{title[:-4].upper()}.txt has been generated')
+    print('')
+    typing('Continue to main menu')
+    print('')
+    x = input('$: ')
 
 
-story_links = get_story_links()
-get_story_text(random.choice(story_links))
-
-# running this code will create a text file containing a childrens story
+def New_Story_Generator():  # this code will create a text file containing a childrens story
+    text_files = Menu()
+    text_files.set_text_files()
+    text_files.display()
+    index = input('Generate new story? [Y/N] or delete old story? [D] $: ').lower()
+    while index != 'y' and index != 'n' and index != 'd':
+        index = input('Generate new story? [Y/N] Or choose stories to delete? [D] $: ').lower()
+    if index == 'y':
+        story_links = get_story_links()
+        get_story_text(random.choice(story_links))
+    elif index == 'd':
+        text_files.display()
+        index = input('Select Files [# # # etc..]$: ')
+        index_list = [int(x) for x in index.split()]
+        for index in index_list:
+            os.remove(text_files.selection[index])
+            print(f'{text_files.selection[index]} has been deleted')
+        print('')
+        typing('Continue to main menu')
+        print('')
+        x = input('$: ')
