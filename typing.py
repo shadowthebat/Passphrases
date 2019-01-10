@@ -4,6 +4,9 @@ import random
 
 
 def typing(output):
+    """
+        Prints string to console simulating a 'typing on keyboard' effect
+    """
     punctuation = ",.?!"
     for char in output:
         if char in punctuation:
